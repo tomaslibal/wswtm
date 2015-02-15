@@ -1,3 +1,6 @@
 .DS_Store
 *.swp
 *.*~
+
+# ignore the image resource folders in data/
+data/*/images/*
