@@ -4,3 +4,6 @@
 
 # ignore the image resource folders in data/
 data/*/images/*
+
+# ignore the bin folder
+program/bin
