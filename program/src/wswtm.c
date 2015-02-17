@@ -55,6 +55,11 @@ int main(int argc, char** argv)
      * Print out the results
      */
 
+    /*
+     * Free up the resources
+     */
+    free(img_path);
+
     return 0;
 }
 
