@@ -5,7 +5,7 @@ certain features in a given image. For instance, one classifier could be testing
 presence of a building in an image and for a given input it may return some
 probability `P_building(input) = x`, where x is a real value `(0, 1>`.
 
-The goal is to have trained 64 classifiers by the second half of 2015.
+The goal is to have trained 64 classifiers by the end of 2015.
 
 ## Data
 
