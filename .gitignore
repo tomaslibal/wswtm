@@ -2,8 +2,17 @@
 *.swp
 *.*~
 
+# ignore intellij project folder
+.idea
+!.idea/.name
+!.idea/wswtm.iml
+!.idea/encodings.xml
+!.idea/vcs.xml
+!.idea/modules.xml
+
 # ignore the image resource folders in data/
-data/*/images/*
+resources/classes/*
 
 # ignore the bin folder
 program/bin
+target
