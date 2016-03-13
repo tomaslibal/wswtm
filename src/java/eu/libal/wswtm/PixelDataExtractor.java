@@ -15,6 +15,12 @@ public class PixelDataExtractor {
 
     }
 
+    /**
+     * Column by column pixel data
+     *
+     * @param input
+     * @return
+     */
     public PixelData extract(File input) {
         PixelData pd = new PixelData();
         int[][] bitmapArray;
