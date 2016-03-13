@@ -1,7 +1,5 @@
 package eu.libal.wswtm.image;
 
-import eu.libal.wswtm.image.PixelData;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
