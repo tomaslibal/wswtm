@@ -1,5 +1,7 @@
-package eu.libal.wswtm;
+package eu.libal.wswtm.image;
 
+import eu.libal.wswtm.image.PixelData;
+import eu.libal.wswtm.image.PixelDataExtractor;
 import org.junit.Before;
 import org.junit.Test;
 

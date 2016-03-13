@@ -1,4 +1,4 @@
-package eu.libal.wswtm;
+package eu.libal.wswtm.image;
 
 /**
  *

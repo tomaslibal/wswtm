@@ -1,8 +1,7 @@
-package eu.libal.wswtm;
+package eu.libal.wswtm.image;
 
+import eu.libal.wswtm.image.ImageCropperAndResizer;
 import org.junit.Before;
-
-import static org.junit.Assert.*;
 
 /**
  *

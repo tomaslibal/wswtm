@@ -1,4 +1,6 @@
-package eu.libal.wswtm;
+package eu.libal.wswtm.image;
+
+import eu.libal.wswtm.image.PixelData;
 
 import java.awt.image.BufferedImage;
 
