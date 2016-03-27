@@ -6,6 +6,8 @@ of the input and a selected class to a probability measure.
 `wswtm` does not include feature location detection so the training data should be data samples centered to the middle
 point of each image.
 
+> THIS IS A WORK IN PROGRESS
+
 ## Project structure
 
 This is a Maven project with external dependencies.
