@@ -1,18 +1,19 @@
 # WhatShouldWeTagMe Auto Tagging Software
 
-This software includes classifiers that yield a probability score of presence of
-certain features in a given image. For instance, one classifier could be testing
-presence of a building in an image and for a given input it may return some
-probability `P_building(input) = x`, where x is a real value `(0, 1>`.
+A set of binary classifiers for image data. Given an image this program contains a function that maps the image data
+of the input and a selected class to a probability measure.
 
-The goal is to have trained 64 classifiers by the end of 2015.
+`wswtm` does not include feature location detection so the training data should be data samples centered to the middle
+point of each image.
 
-## Data
+## Project structure
 
-The images and their computed features (in plain text) reside here.
+This is a Maven project with external dependencies.
 
-## Program
+### FANN Library
 
-Computer vision software with the machine learning algorithms for classifying 
-images.
+A wrapper library is used to make calls to the native FANN library which must be installed on the system.
+
+[FANN Homepage](http://leenissen.dk/fann/wp/)
+
 
