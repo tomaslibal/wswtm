@@ -16,3 +16,6 @@ resources/classes/*
 # ignore the bin folder
 program/bin
 target
+
+# ignore the compiled python files
+*.pyc
