@@ -4,7 +4,7 @@
 # from keras.layers import Dense, Dropout, Flatten
 # from keras.layers import Convolution2D, MaxPooling2D
 
-np.random.seed(42)  # set deterministic reproducibility
+# np.random.seed(42)  # set deterministic reproducibility
 
 import image
 from log import debug
