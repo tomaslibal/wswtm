@@ -9,3 +9,9 @@ class modeltrainer():
     """
      def load_data(self):
          pass
+
+     def train_model(self):
+         pass
+
+     def save_model(self):
+         pass
