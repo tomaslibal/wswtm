@@ -13,7 +13,7 @@ class wswtm():
     """
         returns an array of possible tags for a give image (specified by a path)
     """
-    def image2tags(path, treshold=0.75):
+    def image2tags(self, path, treshold=0.75):
         pass
 
 debug("wswtm init...") 
