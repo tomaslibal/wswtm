@@ -1,8 +1,8 @@
-import numpy as np
+# import numpy as np
 
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Convolution2D, MaxPooling2D
+# from keras.models import Sequential
+# from keras.layers import Dense, Dropout, Flatten
+# from keras.layers import Convolution2D, MaxPooling2D
 
 np.random.seed(42)  # set deterministic reproducibility
 
