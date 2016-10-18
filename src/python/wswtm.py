@@ -11,15 +11,12 @@ from log import debug
 
 class wswtm():
     """
-        loads given images into a numpy array of shape (N, ch, r, c)
-        where 
-         - N is the number of images,
-         - ch is the number of the channels (3 for RGB, 4 for RGBA, etc.)
-         - is the number of the rows (height in pixels)
-         - is the number of the columns (width in pixels)
+        Loads a trained model
     """
-    def load_data():
-        pass
+    def load_model(model_name):
+        model_file = model_name + '.json'
+        model_weights = model_name + '.h5'
+
     """
         returns an array of possible tags for a give image (specified by a path)
     """
