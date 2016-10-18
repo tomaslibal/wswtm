@@ -2,3 +2,4 @@ Dependencies installed with pip
 
 - tensorflow 0.10.0
 - Keras 1.1.0
+- pillow
