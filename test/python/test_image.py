@@ -7,8 +7,13 @@ class ImageTest(unittest.TestCase):
         pass
 
     def test_should_return_pixelaccess_object(self):
-        r = image2pix('test/resources/test1.png')
+        r, _, _ = image2pix('test/resources/test1.png')
         self.assertEqual("PixelAccess", type(r).__name__)
+
+    def test_should_return_img_dims(self):
+        _, w, h = image2pix('test/resources/test1.png')
+        self.assertEqual(28, w)
+        self.assertEqual(28, h)
 
 
 if __name__ == '__main__':

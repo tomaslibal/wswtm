@@ -9,7 +9,7 @@ class wswtmTest(unittest.TestCase):
         w = wswtm()
 
     def test_should_return_1d_array(self):
-        self.assertEqual(True, isinstance(w.image2tags('some/image.png')))
+        self.assertEqual(True, isinstance(w.image2tags('some/image.png'), list))
 
 
 if __name__ == '__main__':
