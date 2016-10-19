@@ -10,6 +10,10 @@ print(img.shape)
 
 dbfilepath = "resources/images/training.csv"
 
+def append_to_file(path, line):
+    with open(path, "a") as f:
+        f.write(line)
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Transforms image pixel data into an array and saves the array together with labels.')
     parser.add_argument('path', metavar='I', 
@@ -30,8 +34,7 @@ if __name__ == '__main__':
     line += ',' + labels
     line += '\n'
 
-    with open(dbfilepath, "a") as dbf:
-        dbf.write(line)
+    append_to_file(dbfilepath, line)
 
     print "stored the image data in " + dbfilepath
 
