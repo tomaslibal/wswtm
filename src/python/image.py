@@ -3,8 +3,11 @@ from PIL import Image
 def load_image(path):
     pass
 
-def resize(width=32, height=32):
-    pass
+def get_resized_pixels(path, width=32, height=32):
+    img = Image.open(path)
+    img.thumbnail((width, height), Image.ANTIALIAS)
+    p = list(img.getdata())
+    return p, width, height
 
 def crop_center(width=32, height=32):
     pass

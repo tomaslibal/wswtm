@@ -1,5 +1,5 @@
 import argparse
-from image import resize
+from image import get_resized_pixels
 from image import image2pix
 
 """
@@ -23,6 +23,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     path = args.path
+
     labels = args.labels
 
     print "got image path and its labels:"
