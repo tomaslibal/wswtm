@@ -23,6 +23,13 @@ class ImageTest(unittest.TestCase):
         self.assertEqual(w, w2)
         self.assertEqual(h, h2)
 
+    def test_should_downsize_the_pixels_to_required_w_and_h(self):
+        p, w, h = get_resized_pixels('test/resources/test1.png', 8, 8)
+
+        self.assertEqual(64, len(p))
+        self.assertEqual(8, w)
+        self.assertEqual(8, h)
+
 
 if __name__ == '__main__':
     unittest.main()
