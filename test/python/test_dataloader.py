@@ -19,9 +19,13 @@ class DataloaderTest(unittest.TestCase):
         with open(self.dummy_file, 'w') as dummy:
             dummy.write('abc')
 
+        self.dl = dataloader(self.dummy_file)
+
     @classmethod
     def tearDownClass(self):
         self.clean()
 
     def test_loads_all_lines_even_if_last_line_does_not_have_line_break(self):
-        
+        x, y = self.dl.load_data()
+        self.assertEqual(1, len(x))
+        self.assertEqual(1, len(y))
