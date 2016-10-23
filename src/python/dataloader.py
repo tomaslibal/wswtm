@@ -15,8 +15,9 @@ class dataloader():
         
         assert data.ndim == 2
 
-        X = np.array(data[:,[0,num_cols-1]])
+        X = np.array(data[:,0:num_cols-1])
         if y_enable is True:
-            Y = np.array(data[:,-num_cols])
+            data = np.loadtxt(self.path, dtype='str', delimiter=',')
+            Y = np.array(data[:,num_cols:])
     
         return X, Y

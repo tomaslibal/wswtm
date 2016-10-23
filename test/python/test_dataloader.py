@@ -1,5 +1,6 @@
 import unittest
 import os.path
+import numpy as np
 from os import remove
 
 from src.python.dataloader import dataloader
@@ -45,3 +46,9 @@ class DataloaderTest(unittest.TestCase):
         self.clean()
         self.write_to_dummy('1,2,3\n')
         self.assertRaises(AssertionError, self.dl.load_data)
+
+    def test_it_can_handle_string_class_names(self):
+        self.clean()
+        self.write_to_dummy('1,2,3,a,b,c\n4,5,6,b,c,a')
+        x, y = self.dl.load_data(3, True)
+        self.assertEqual(True, np.array_equal([['a','b','c'], ['b','c','a']], y))
