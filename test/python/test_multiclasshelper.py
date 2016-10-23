@@ -15,3 +15,9 @@ class ModelTrainerTest(unittest.TestCase):
         self.assertEqual(5, l)
         self.assertEqual(5, len(dct))
 
+    def test_it_should_set_values_to_one_for_each_given_class(self):
+        dct = { 'foo': 0, 'bar': 1, 'baz': 2 }
+        classes = [ 'foo', 'baz' ]
+        a = self.mch.classes_to_array(classes, dct)
+        self.assertEqual(True, np.array_equal([1, 0, 1], a))
+
