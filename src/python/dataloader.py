@@ -5,8 +5,6 @@ class dataloader():
         self.path = path
 
     def load_data(self, num_cols=0, y_enable=True):
-        # assert isinstance(self.path, str)
-        # assert len(self.path) > 0
         X = []
         Y = []
 
