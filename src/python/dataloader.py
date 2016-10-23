@@ -5,7 +5,7 @@ class dataloader():
     def __init__(self, path):
         self.path = path
 
-    def load_data(self, num_cols=0, y_enable=True, abc=False):
+    def load_data(self, num_cols=0, y_enable=True):
         X = []
         Y = []
 
