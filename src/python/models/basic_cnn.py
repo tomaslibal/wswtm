@@ -1,7 +1,7 @@
 from keras.models import Sequential
 from keras.layers import Dense, Dropout,  Flatten, Convolution2D, MaxPooling2D
 
-class BasicCNNModel():
+class basic_cnn():
     def __init__(self, number_classes):
         self.number_classes = number_classes
         self.name = "basic cnn model"

@@ -1,4 +1,5 @@
 from dataloader import dataloader
+from models.basic_cnn import basic_cnn
 
 class modeltrainer():
     path = 'resources/images/training.csv'
