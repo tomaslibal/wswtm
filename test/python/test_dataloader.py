@@ -38,7 +38,7 @@ class DataloaderTest(unittest.TestCase):
         self.assertEqual(3, len(y))
 
     def test_loads_all_lines_even_if_last_line_does_not_have_line_break(self):
-        x, y = self.dl.load_data(4, True)
+        x, y = self.dl.load_data(4, True, True)
         self.assertEqual(2, len(x))
         self.assertEqual(2, len(y))
 
@@ -52,3 +52,9 @@ class DataloaderTest(unittest.TestCase):
         self.write_to_dummy('1,2,3,a,b,c\n4,5,6,b,c,a')
         x, y = self.dl.load_data(3, True)
         self.assertEqual(True, np.array_equal([['a','b','c'], ['b','c','a']], y))
+
+    def test_it_can_handle_variable_number_of_class_names(self):
+        self.clean()
+        self.write_to_dummy('1,2,3,a,b\n4,5,6,b,c,a,d,e\n7,8,9,z')
+        x, y = self.dl.load_data(3, True)
+        self.assertEqual(True, np.array_equal([['a', 'b'], ['b', 'c', 'a', 'd', 'e'], ['z']], y))
