@@ -38,7 +38,7 @@ class DataloaderTest(unittest.TestCase):
         self.assertEqual(3, len(y))
 
     def test_loads_all_lines_even_if_last_line_does_not_have_line_break(self):
-        x, y = self.dl.load_data(4, True, True)
+        x, y = self.dl.load_data(4, True)
         self.assertEqual(2, len(x))
         self.assertEqual(2, len(y))
 
