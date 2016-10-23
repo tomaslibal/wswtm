@@ -40,3 +40,8 @@ class DataloaderTest(unittest.TestCase):
         x, y = self.dl.load_data(4, True)
         self.assertEqual(2, len(x))
         self.assertEqual(2, len(y))
+
+    def test_it_does_throw_assertion_error_when_only_one_line(self):
+        self.clean()
+        self.write_to_dummy('1,2,3\n')
+        self.assertRaises(AssertionError, self.dl.load_data)
