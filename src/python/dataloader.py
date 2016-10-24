@@ -23,3 +23,18 @@ class dataloader():
             Y = np.array(Y)
     
         return X, Y
+
+    def flatten_y_uniq(self, labels):
+        return set(sum(labels, []))
+
+    """
+        transforms string labels to an array where the length of the array
+        is the number of the labels present and each row of the original
+        string label array is transformed to an array of 0s and 1s where
+        1 corresponds to the original label being present. To be able to 
+        reconstruct the labels back from such array, a dictionary is also
+        produced which remembers which string label is which index in the
+        resulting array.
+    """
+    def transform_free_labels_to_array(self):
+        pass

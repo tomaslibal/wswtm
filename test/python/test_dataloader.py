@@ -58,3 +58,8 @@ class DataloaderTest(unittest.TestCase):
         self.write_to_dummy('1,2,3,a,b\n4,5,6,b,c,a,d,e\n7,8,9,z')
         x, y = self.dl.load_data(3, True)
         self.assertEqual(True, np.array_equal([['a', 'b'], ['b', 'c', 'a', 'd', 'e'], ['z']], y))
+
+    def test_it_flattens_labels_to_1d_list(self):
+        labels=[ ['cat', 'animal'], ['dog', 'animal', 'nature'], ['fish'] ]
+        r = self.dl.flatten_y_uniq(labels)
+        self.assertEqual(True, np.equal(set(['cat', 'animal', 'dog', 'nature', 'fish']), r))
