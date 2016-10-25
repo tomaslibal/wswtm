@@ -1,6 +1,8 @@
 import numpy as np
 import csv
 
+from multiclasshelper import MultiClassHelper
+
 class dataloader():
     def __init__(self, path):
         self.path = path
@@ -24,7 +26,7 @@ class dataloader():
     
         return X, Y
 
-    def flatten_y_uniq(self, labels):
+    def flatten_y_uniq(self, labels):        
         return set(sum(labels, []))
 
     """
@@ -36,5 +38,12 @@ class dataloader():
         produced which remembers which string label is which index in the
         resulting array.
     """
-    def transform_free_labels_to_array(self):
-        pass
+    def transform_free_labels_to_array(self, y):
+        labels = self.flatten_y_uniq(y)
+        mchelper = MultiClassHelper()
+        dct, num = mchelper.get_class_dict(labels)
+        out = []
+        for row in y:
+            out.append(mchelper.classes_to_array(row, dct))
+
+        return out, dct
