@@ -16,11 +16,19 @@ class modeltrainer():
     def load_data(self, num_cols, y_enable=True):
         dl = dataloader(self.path)
         X_train, Y_train = dl.load_data(num_cols, y_enable)
-        mx = len(X_train)
-        split = int(round(mx * self.split_test))
-        X_train, X_val = X_train[:-split], X_train[-split:]
-        Y_train, Y_val = Y_train[:-split], Y_train[-split:]
+        
+        return X_train, Y_train
+
+    def split_data(self, x, y, split_test=0.3):
+        mx = len(x)
+        split = int(round(mx * split_test))
+        X_train, X_val = x[:-split], x[-split:]
+        Y_train, Y_val = y[:-split], y[-split:]
         return X_train, Y_train, X_val, Y_val
+
+    def convert_labels_to_binary(self, y):
+        dl = dataloader(self.path)
+        return dl.transform_free_labels_to_array(y)
 
     def train_model(self):
         pass
