@@ -69,3 +69,24 @@ class DataloaderTest(unittest.TestCase):
         expected = [ [0, 1, 1], [0, 0, 1], [1, 0, 0] ]
         y_trans, dct = self.dl.transform_free_labels_to_array(y)
         self.assertEqual(True, np.array_equal(expected, y_trans))
+
+    def test_it_transforms_2d_array_of_1s_and_0s_back_to_labels(self):
+        y = [ ['cat', 'dog'], ['cat'], ['fish'] ]
+        arr = [ [0, 1, 1], [0, 0, 1], [1, 0, 0] ]
+        y_trans, dct = self.dl.transform_free_labels_to_array(y)
+
+        labels = self.dl.transform_array_to_free_labels(y_trans, dct)
+        for i in range(len(labels)):
+            self.assertEqual(True, self.contains_all(y[i], labels[i]))
+
+    @classmethod
+    def contains_all(self, a, b):       
+        if len(a) != len(b):
+            return False
+        for el in a:
+            if el not in b:
+                return False
+        for el in b:
+            if el not in a:
+                return False
+        return True

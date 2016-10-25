@@ -47,3 +47,11 @@ class dataloader():
             out.append(mchelper.classes_to_array(row, dct))
 
         return out, dct
+
+    def transform_array_to_free_labels(self, y, dct):
+        labels = []
+        mchelper = MultiClassHelper()
+        for row in y:
+            labels.append(mchelper.array_to_classes(row, dct))
+
+        return labels
