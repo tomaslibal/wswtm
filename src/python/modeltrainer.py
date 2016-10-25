@@ -30,8 +30,8 @@ class modeltrainer():
         dl = dataloader(self.path)
         return dl.transform_free_labels_to_array(y)
 
-    def init_model(self):
-        cnn = basic_cnn(2, (3, 28, 28))
+    def init_model(self, num_classes, input_shape):
+        cnn = basic_cnn(num_classes, input_shape)
         m = cnn.get_model()
         self.model = cnn.compile(m)
 

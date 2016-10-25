@@ -32,4 +32,4 @@ class ModelTrainerTest(unittest.TestCase):
         self.assertEqual(True, np.array_equal([ [0, 0, 0, 0, 0, 1, 0], [1, 0, 0, 1, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 1, 0, 0], [0, 0, 1, 0, 0, 0, 0] ], y_bin))
 
     def test_initing_model_does_not_throw_error(self):
-        self.trainer.init_model()
+        self.trainer.init_model(2, (3, 28, 28))
