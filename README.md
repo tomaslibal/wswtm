@@ -1,21 +1,26 @@
 # WhatShouldWeTagMe Auto Tagging Software
 
-A set of binary classifiers for image data. Given an image this program contains a function that maps the image data
-of the input and a selected class to a probability measure.
-
-`wswtm` does not include feature location detection so the training data should be data samples centered to the middle
-point of each image.
+Given an image this program contains a function that maps the image data of the input to text labels which represent some probabilistically inferred possible labels.
 
 > THIS IS A WORK IN PROGRESS
 
+## Use a library
+
+```python
+
+from wswtm import wswtm
+
+tagger = wswtm()
+tags = tagger.image2tags('/some/image/path.png')
+
+print tags
+
+[('flower', 0.9), ('petals', 0.87), ('orchid', 0.71)]
+
+```
+
 ## Project structure
 
-This is a Maven project with external dependencies.
-
-### FANN Library
-
-A wrapper library is used to make calls to the native FANN library which must be installed on the system.
-
-[FANN Homepage](http://leenissen.dk/fann/wp/)
+This is a python 2.7 project with external dependencies.
 
 
