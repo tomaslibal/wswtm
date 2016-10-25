@@ -30,3 +30,6 @@ class ModelTrainerTest(unittest.TestCase):
         y_bin, dct = self.trainer.convert_labels_to_binary(y_train)
 
         self.assertEqual(True, np.array_equal([ [0, 0, 0, 0, 0, 1, 0], [1, 0, 0, 1, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 1, 0, 0], [0, 0, 1, 0, 0, 0, 0] ], y_bin))
+
+    def test_initing_model_does_not_throw_error(self):
+        self.trainer.init_model()

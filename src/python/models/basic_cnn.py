@@ -1,18 +1,22 @@
 from keras.models import Sequential
-from keras.layers import Dense, Dropout,  Flatten, Convolution2D, MaxPooling2D
+from keras.layers import Dense, Dropout,  Flatten, Convolution2D, MaxPooling2D, Activation
 
 class basic_cnn():
-    def __init__(self, number_classes):
+    def __init__(self, number_classes, shape):
         self.number_classes = number_classes
         self.name = "basic cnn model"
+
+        input_shape = shape
+        nb_filters = 32
+        kernel_size = 3
 
         self.feature_layers = [
     		Convolution2D(nb_filters, kernel_size, kernel_size, input_shape=input_shape, border_mode='valid', activation='relu'),
 		Dropout(0.2),
-    		Convolution2D(nb_filters*2, kernel_size, kernel_size, activation='relu'),
-	        MaxPooling2D(pool_size=(2,2)),
+    		Convolution2D(nb_filters*2, 1, kernel_size, activation='relu'),
+	        MaxPooling2D(pool_size=(1,2)),
     	        Dropout(0.25),
-    	        Convolution2D(nb_filters*4, 2, 2, activation='relu', border_mode='same'),
+    	        Convolution2D(nb_filters*4, 1, 1, activation='relu', border_mode='same'),
                 Flatten(),
 	]
 
@@ -25,7 +29,7 @@ class basic_cnn():
        		Activation('softmax')
 	]
 
-    def create_model(self):
+    def get_model(self):
         return Sequential(self.feature_layers + self.classification_layers)
 
 
