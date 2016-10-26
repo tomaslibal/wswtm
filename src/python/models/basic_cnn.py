@@ -36,7 +36,7 @@ class basic_cnn():
     def compile(self, model):
         loss_fcn = 'binary_crossentropy'
         if (self.number_classes > 2):
-            loss_fcn = 'categoriacal_crossentropy'
+            loss_fcn = 'categorical_crossentropy'
         model.compile(loss=loss_fcn,
                   optimizer='adadelta',
                   metrics=['accuracy'])
