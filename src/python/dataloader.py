@@ -26,8 +26,11 @@ class dataloader():
     
         return X, Y
 
-    def flatten_y_uniq(self, labels):        
-        return set(sum(labels, []))
+    def flatten_y_uniq(self, labels): 
+        if isinstance(labels, np.ndarray):
+            return set(sum(labels.tolist(), []))
+        else:
+            return set(sum(labels, []))
 
     """
         transforms string labels to an array where the length of the array

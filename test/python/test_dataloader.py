@@ -64,6 +64,11 @@ class DataloaderTest(unittest.TestCase):
         r = self.dl.flatten_y_uniq(labels)
         self.assertEqual(True, np.equal(set(['cat', 'animal', 'dog', 'nature', 'fish']), r))
 
+    def test_it_flattens_numpy_ndarray_to_1d_list(self):
+        labels=np.asarray([['a'],['b'],['c'], ['d', 'c']])
+        r = self.dl.flatten_y_uniq(labels)
+        self.assertEqual(True, np.equal(set(['a','b','c', 'd']), r))
+
     def test_it_transforms_each_array_of_free_labels_to_0_and_1_array(self):
         y = [ ['cat', 'dog'], ['cat'], ['fish'] ]
         expected = [ [0, 1, 1], [0, 0, 1], [1, 0, 0] ]
