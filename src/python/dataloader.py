@@ -15,7 +15,7 @@ class dataloader():
 
         assert data.ndim == 2
 
-        X = np.array(data[:,0:num_cols-1])
+        X = np.array(data[:,0:num_cols])
         if y_enable is True:  
             with open(self.path, 'r') as csvfile:
                 reader = csv.reader(csvfile, delimiter=',')
