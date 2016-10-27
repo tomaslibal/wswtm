@@ -33,3 +33,17 @@ class ModelTrainerTest(unittest.TestCase):
 
     def test_initing_model_does_not_throw_error(self):
         self.trainer.init_model(2, (3, 28, 28))
+
+    def test_train_model_goes_without_an_error(self):
+        """
+        self.trainer.path = 'resources/images/training.csv'
+        x, y = self.trainer.load_data(3*28*28)
+        y_bin, dct = self.trainer.convert_labels_to_binary(y)
+
+        x_train, y_train, x_test, y_test = self.trainer.split_data(x, y_bin, 0.3)
+        
+        self.trainer.init_model(len(y_bin), x_train.shape)
+        self.trainer.train_model(x_train, y_train, x_test, y_test)
+        self.trainer.save_model(self.trainer.model, dct)
+        """
+        pass
