@@ -18,13 +18,21 @@ class MultiClassHelper():
                 a[idx] = 1
         return a
 
-    def array_to_classes(self, a, dct):
+    def array_to_classes(self, a, dct,treshold=1):
         labels = []
         keys = dct.keys()
         i = 0
         for idx in a:
-            if idx is 1:
+            if idx >= treshold:
                 labels.append(keys[i])
             i += 1
         return labels
 
+    def array_to_classes_with_prob(self, a, dct, treshold=0.5):
+        labels = []
+        keys = dct.keys()
+        i = 0
+        for idx in a:
+            labels.append((keys[i], idx))
+            i += 1
+        return labels

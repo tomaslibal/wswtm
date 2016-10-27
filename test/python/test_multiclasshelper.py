@@ -29,3 +29,9 @@ class ModelTrainerTest(unittest.TestCase):
         labels = self.mch.array_to_classes(a, dct)
         self.assertTrue(np.array_equal(['bar', 'baz'], labels))
 
+    def test_it_should_include_only_classes_that_meet_the_treshold(self):
+        dct = OrderedDict([ ('foo', 0), ('bar', 1), ('baz', 2)])
+        a = [0.2, 0.8, 0.9]
+        labels = self.mch.array_to_classes(a, dct, 0.8)
+        self.assertTrue(np.array_equal(['bar', 'baz'], labels))
+
