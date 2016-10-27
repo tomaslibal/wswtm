@@ -13,17 +13,17 @@ class basic_cnn():
         self.feature_layers = [
     		Convolution2D(nb_filters, kernel_size, kernel_size, input_shape=input_shape, border_mode='valid', activation='relu'),
 		Dropout(0.2),
-    		Convolution2D(nb_filters*2, 1, kernel_size, activation='relu'),
+    		Convolution2D(nb_filters, 1, kernel_size, activation='relu'),
 	        MaxPooling2D(pool_size=(1,2)),
     	        Dropout(0.25),
-    	        Convolution2D(nb_filters*4, 1, 1, activation='relu', border_mode='same'),
+    	        Convolution2D(nb_filters*2, 1, 1, activation='relu', border_mode='same'),
                 Flatten(),
 	]
 
 	self.classification_layers = [
-    		Dense(256, activation='relu'),
+    		Dense(64, activation='relu'),
 		Dropout(0.5),
-    		Dense(256, activation='relu'),
+    		Dense(64, activation='relu'),
 	        Dropout(0.5),    
                 Dense(self.number_classes),
        		Activation('softmax')
@@ -41,7 +41,7 @@ class basic_cnn():
                   optimizer='adadelta',
                   metrics=['accuracy'])
 
-    def fit(self, model, X_train, Y_train, X_test, Y_test, batch_size=256, np_epoch=32, verbose=1):
+    def fit(self, model, X_train, Y_train, X_test, Y_test, batch_size=256, nb_epoch=32, verbose=1):
         model.fit(X_train, Y_train,
               batch_size=batch_size, nb_epoch=nb_epoch,
               verbose=verbose,
