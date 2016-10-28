@@ -4,7 +4,7 @@ Given an image this program contains a function that maps the image data of the 
 
 > THIS IS A WORK IN PROGRESS
 
-## Use a library
+## Use the library
 
 ```python
 
