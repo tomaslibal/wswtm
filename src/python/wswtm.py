@@ -29,6 +29,12 @@ class wswtm():
     """
     def image2tags(self, path, treshold=0.75):
         pass
+    
+    """
+        returns a list of all classes known to the classifier
+    """
+    def get_classes(self):
+        pass
 
 debug("wswtm init...") 
 
