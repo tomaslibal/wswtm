@@ -19,3 +19,6 @@ target
 
 # ignore the compiled python files
 *.pyc
+
+# ignore all image files because they're static binaries that can be stored more efficiently somewhere else
+resources/images
