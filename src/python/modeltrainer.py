@@ -4,7 +4,8 @@ from models.basic_cnn import basic_cnn
 
 class modeltrainer():
     path = 'resources/images/training.csv'
-    model_path = 'resources/models/basic_cnn.json'
+    model_path = 'resources/models/'
+    model_name = 'basic_cnn'
     split_test = 0.3
 
     """
@@ -43,12 +44,12 @@ class modeltrainer():
 
     def save_model(self, model, dct):
         model_json = model.to_json()
-        with open(self.model_path, 'w') as json_file:
+        with open(self.model_path + self.model_name + '.json', 'w') as json_file:
 	    json_file.write(model_json)
 
         # serialize weights to HDF5
-        model.save_weights('resources/models/basic_cnn.h5')
+        model.save_weights(self.model_path + self.model_name + '.h5')
 
         # serialize the dictionary to a pickle file
-        pickle.dump(dct, open('resources/models/basic_cnn_dct.p', 'wb'))
+        pickle.dump(dct, open(self.model_path + self.model_name + '_dct.p', 'wb'))
         pass
