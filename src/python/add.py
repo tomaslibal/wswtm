@@ -31,7 +31,9 @@ if __name__ == '__main__':
 
     p, _, _ = image2pix(path)
 
-    line = ','.join(str(px[0]) + ',' + str(px[1]) + ',' + str(px[2]) for px in p) 
+    # use only the red component
+    # for G and B components add + ',' + str(px[1]) + ',' + str(px[2])
+    line = ','.join(str(px[0]) for px in p) 
     line += ',' + labels
     line += '\n'
 
