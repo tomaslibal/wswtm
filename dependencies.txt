@@ -4,3 +4,4 @@ Dependencies installed with pip
 - Keras 1.1.0
 - pillow
 - numpy 1.11.2
+- mockito 0.7.0
