@@ -8,6 +8,8 @@
 
 import image
 from log import debug
+from keras.models import model_from_json
+import pickle
 
 class wswtm():
     """
@@ -23,7 +25,7 @@ class wswtm():
     load_on_init = True
 
     def __init__(self):
-        if load_on_init is True:
+        if self.load_on_init is True:
             self.init()
 
     def init(self):
@@ -59,7 +61,9 @@ class wswtm():
         returns a list of all classes known to the classifier
     """
     def get_classes(self):
-        pass
+        if self.dct:
+            return self.dct.keys()
+        return None
 
 debug("wswtm init...") 
 
