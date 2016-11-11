@@ -40,7 +40,7 @@ class modeltrainer():
         self.cnn.compile(m)
 
     def train_model(self, X_train, Y_train, X_test, Y_test):         
-        self.cnn.fit(self.model, X_train, Y_train, X_test, Y_test, batch_size=256, nb_epoch=8)
+        self.cnn.fit(self.model, X_train, Y_train, X_test, Y_test, batch_size=8, nb_epoch=8)
 
     def save_model(self, model, dct):
         model_json = model.to_json()
