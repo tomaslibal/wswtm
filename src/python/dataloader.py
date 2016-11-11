@@ -1,5 +1,6 @@
 import numpy as np
 import csv
+import random
 
 from multiclasshelper import MultiClassHelper
 
@@ -25,6 +26,12 @@ class dataloader():
             Y = np.array(Y)
     
         return X, Y
+
+    def permute(self, x, y):
+        m = zip(x, y)
+        random.shuffle(m)
+        p, q = zip(*m)
+        return p, q
 
     def flatten_y_uniq(self, labels): 
         if isinstance(labels, np.ndarray):

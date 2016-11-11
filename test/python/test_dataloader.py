@@ -53,6 +53,14 @@ class DataloaderTest(unittest.TestCase):
         x, y = self.dl.load_data(3, True)
         self.assertEqual(True, np.array_equal([['a','b','c'], ['b','c','a']], y))
 
+    def test_it_permutes_the_lines(self):
+        self.clean()
+        self.write_to_dummy('1,2,3,a,b,c\n4,5,6,b,c,a\n7,8,9,a,b\n10,11,12,a')
+        x, y = self.dl.load_data(3, True)
+        x, y = self.dl.permute(x, y)
+        self.assertEqual(False, np.array_equal([[1,2,3], [4,5,6], [7,8,9], [10,11,12]], x))
+        self.assertEqual(False, np.array_equal([['a','b','c'], ['b','c','a'], ['a','b'], ['a']], y))
+
     def test_it_can_handle_variable_number_of_class_names(self):
         self.clean()
         self.write_to_dummy('1,2,3,a,b\n4,5,6,b,c,a,d,e\n7,8,9,z')
