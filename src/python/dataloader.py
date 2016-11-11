@@ -31,7 +31,7 @@ class dataloader():
         m = zip(x, y)
         random.shuffle(m)
         p, q = zip(*m)
-        return p, q
+        return np.array(p), np.array(q)
 
     def flatten_y_uniq(self, labels): 
         if isinstance(labels, np.ndarray):
