@@ -17,7 +17,9 @@ class wswtmTest(unittest.TestCase):
         self.assertEqual(self.mock_model, self.w.model)
 
     def test_should_return_1d_array(self):
-        self.assertEqual(True, isinstance(self.w.image2tags('some/image.png'), list))
+        unstub()
+        self.w = wswtm()
+        self.assertEqual(True, isinstance(self.w.image2tags('test/resources/monkey.jpg'), list))
 
     def test_should_return_classes_from_the_dictionary(self):
         self.w.default_model_path='test/resources/models/'
