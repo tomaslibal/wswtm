@@ -9,7 +9,10 @@
 import image
 from log import debug
 from keras.models import model_from_json
+from multiclasshelper import MultiClassHelper
+from image import image2pix
 import pickle
+import numpy as np
 
 class wswtm():
     """
@@ -55,7 +58,25 @@ class wswtm():
         returns an array of possible tags for a give image (specified by a path)
     """
     def image2tags(self, path, treshold=0.75):
-        pass
+        p, _, _ = image2pix(path)
+        pxl = []
+
+        for px in p:
+            pxl.append(px[0]) 
+
+        vec = np.asarray(pxl)
+        vec = vec.reshape(1, 150, 150, 1)
+
+        if self.model is None:
+            self.init()
+
+        r = self.model.predict(vec)
+
+        mch = MultiClassHelper()
+
+        rp = mch.array_to_classes_with_prob(r[0], self.dct)
+        return rp
+
     
     """
         returns a list of all classes known to the classifier
