@@ -1,4 +1,5 @@
 from src.python.modeltrainer import modeltrainer
+from src.python.dataloader import dataloader
 from keras import backend as K
 
 # Config
@@ -24,11 +25,11 @@ x = x.reshape((x.shape[0],) + input_shape)
 # Convert text labels into a binary 2d array
 y_bin, dct = trainer.convert_labels_to_binary(y)
 
-#x_train, y_train, x_test, y_test = trainer.split_data(x, y_bin, 0.3)
-x_train = x
-y_train = y_bin
-x_test = x_train
-y_test = y_train
+#permute the lines
+dl = dataloader(trainer.path)
+x, y_bin = dl.permute(x, y_bin)
+
+x_train, y_train, x_test, y_test = trainer.split_data(x, y_bin, 0.3)
 
 # Train and save the model
 trainer.init_model(len(dct), input_shape)
