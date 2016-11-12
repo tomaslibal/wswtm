@@ -1,0 +1,5 @@
+tensorflow >= 0.10.0
+Keras >= 1.1.0
+pillow >= 3.4.1
+numpy >= 1.11.2
+mockito >= 0.7.0
