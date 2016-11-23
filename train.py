@@ -3,12 +3,12 @@ from src.python.dataloader import dataloader
 from keras import backend as K
 
 # Config
-img_rows = 150
-img_cols = 150
+img_rows = 96
+img_cols = 96
 
 trainer = modeltrainer()
 trainer.path = 'resources/images/training.csv'
-x, y = trainer.load_data(22500)
+x, y = trainer.load_data(96*96)
 
 x = x.astype('float32')
 x /= 255

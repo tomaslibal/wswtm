@@ -58,14 +58,14 @@ class wswtm():
         returns an array of possible tags for a give image (specified by a path)
     """
     def image2tags(self, path, treshold=0.75):
-        p, _, _ = get_resized_pixels(path, 150, 150)
+        p, _, _ = get_resized_pixels(path, 96, 96)
         pxl = []
 
         for px in p:
             pxl.append(px[0]) 
 
         vec = np.asarray(pxl)
-        vec = vec.reshape(1, 150, 150, 1)
+        vec = vec.reshape(1, 96, 96, 1)
 
         if self.model is None:
             self.init()
