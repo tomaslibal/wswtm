@@ -5,7 +5,7 @@ def load_image(path):
 
 def get_resized_pixels(path, width=32, height=32):
     img = Image.open(path)
-    img.resize((width, height), resample=Image.BILINEAR)
+    img = img.resize((width, height), resample=Image.BILINEAR)
     p = list(img.getdata())
     return p, width, height
 
