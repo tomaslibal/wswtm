@@ -27,6 +27,8 @@ print tags
 
 ## Project structure
 
-This is a python 2.7 project with external dependencies.
+This is a Python 2.7 project with external dependencies. The program is essentially an infrastructure for feeding labelled pixel data to a Keras model, training the model, saving the trained model into `json` and `hdf5` output, loading a trained Keras model, and evaluating new data using the loaded model.
+
+
 
 
