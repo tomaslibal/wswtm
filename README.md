@@ -19,6 +19,12 @@ print tags
 
 ```
 
+## Dependencies
+
+- See the [requirements.txt](requirements.txt) file for Python requirements.
+- Python 2.7
+- pip
+
 ## Project structure
 
 This is a python 2.7 project with external dependencies.
